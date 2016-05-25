@@ -1,0 +1,12 @@
+    <span class="title"><%= @topic.title %></span>
+    <span class="content"><%= @topic.content %></span>
+    <span class="link"><%= @topic.link %></span>
+    <span class="user">
+        Created by <%= link_to @topic.user.name, @topic.user %></span>
+    <span class="timestamp">
+        Created <%= time_ago_in_words(@topic.created_at) %> ago.
+        <% if current_user == @topic.user %>
+            <%= link_to "delete", @topic, method: :delete, data: { confirm: "You sure?"} %>
+        <% else %>
+        <% end %>
+    </span>

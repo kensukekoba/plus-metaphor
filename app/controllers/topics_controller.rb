@@ -1,10 +1,14 @@
 class TopicsController < ApplicationController
   before_action :logged_in_user, only: [:create]
 
+  def show
+    @topic = Topic.find(params[:id])
+  end
+
   def new
     @topic = Topic.new
   end
-
+  
   def create
     @topic = current_user.topics.build(topic_params)
     if @topic.save
@@ -14,6 +18,8 @@ class TopicsController < ApplicationController
       render 'new'
     end
   end
+  
+
   
   private
   def topic_params
