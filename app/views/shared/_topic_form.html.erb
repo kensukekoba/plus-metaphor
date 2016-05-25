@@ -1,0 +1,21 @@
+<%= form_for(@topic) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+
+    <%= f.label :Title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "input title" %>
+
+    <%= f.label :Content %>
+    <%= f.text_area :content, class: 'form-control', placeholder: "input content", rows:"10" %>
+
+    <%= f.label :参考リンク %>
+    <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
+
+    <% #TODO チェックボックスにする %>
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control', placeholder: "Category of this topic" %>
+
+
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
