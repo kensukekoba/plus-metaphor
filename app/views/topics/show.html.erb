@@ -9,7 +9,8 @@
         Created <%= time_ago_in_words(@topic.created_at) %> ago.
         <% if current_user == @topic.user %>
             <%= link_to "delete", @topic, method: :delete, data: { confirm: "You sure?"} %>
-        <% else %>
+            <%= link_to "Edit topic" , edit_topic_path(@topic) %>            
         <% end %>
     </span>
+    <span class="category">Official flag: <%= @topic.officialflag %></span>
 </div>

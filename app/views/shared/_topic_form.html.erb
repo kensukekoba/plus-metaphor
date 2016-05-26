@@ -11,7 +11,7 @@
     <%= f.label :参考リンク %>
     <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
 
-    <% #TODO チェックボックスにする %>
+    <% #TODO 見た目の調整 %>
     <div class="form-group">
       <p>Category</p>
       <div class="radio-inline">
@@ -19,11 +19,20 @@
       </div>
       <div class="radio-inline">
         <%= f.radio_button :category, 'feeling' %> <%= f.label :category, '心情・気分' , :value => "feeling" %>
+      </div>
       <div class="radio-inline">
         <%= f.radio_button :category, 'event' %> <%= f.label :category, '出来事・状況' , :value => "event" %>
       </div>
-      </div>
     </div>
+    
+    <% if current_user == @topic.user %>
+      <div class="form-group">
+        <p>Official</p>
+        <div class="checkbox-inline">
+          <%= f.check_box :officialflag, {}, true, false %> <%= f.label :officialflag, 'official topic'  %>
+        </div>
+      </div>
+    <% end %>
     
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>

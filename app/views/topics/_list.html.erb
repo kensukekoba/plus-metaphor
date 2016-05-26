@@ -5,11 +5,7 @@
         Created by <%= link_to topic.user.name, topic.user %></span>
     <span class="timestamp">
         Created <%= time_ago_in_words(topic.created_at) %> ago.
-        <% if current_user == topic.user %>
-            <%= link_to "delete", topic, method: :delete, data: { confirm: "You sure?"} %>
-            <%= link_to "detail", topic_path(topic) %>
-        <% else %>
-        <% end %>
+        <%= link_to "detail", topic_path(topic) %>
     </span>
 </li>
 <% end %>
