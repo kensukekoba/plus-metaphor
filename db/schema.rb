@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525090008) do
+ActiveRecord::Schema.define(version: 20160525225834) do
 
   create_table "topics", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160525090008) do
     t.string   "title"
     t.text     "link"
     t.string   "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "officialflag", default: false
   end
 
   add_index "topics", ["user_id", "created_at"], name: "index_topics_on_user_id_and_created_at"
@@ -31,8 +32,9 @@ ActiveRecord::Schema.define(version: 20160525090008) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "favo_phrase"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "adminflag",       default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
