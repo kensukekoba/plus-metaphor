@@ -124,12 +124,12 @@ input {
   .user {
     margin-top: 5em;
     margin-left: 10px;
+    color: $gray-light;
     padding-top: 0;
   }
   .title {
     display: block;
     margin-left: 10px;
-    font-size: 50px;
   }
   .content {
     display: block;
@@ -141,9 +141,13 @@ input {
   }
   .timestamp {
     color: $gray-light;
-    display: block;
     margin-left: 10px;
   }
+  .count {
+    color: $gray-light;
+    margin-left: 10px;
+  }
+  
 }
 
 aside {

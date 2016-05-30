@@ -9,4 +9,13 @@
         <%= link_to "Delete", metaphor, method: :delete, data: { confirm: "You sure?"} %>
     <% end %>
 </li>
+
+<% if logged_in? %>
+    <%= render 'shared/comment_form' , metaphor: metaphor %>
+<% end %>
+
+<ol class="topics">
+    <%= render 'comments/list' , comments: comments %>
+</ol>
+
 <% end %>

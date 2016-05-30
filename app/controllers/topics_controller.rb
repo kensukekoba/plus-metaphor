@@ -6,6 +6,8 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @metaphor = current_user.metaphors.build if logged_in?
     @metaphors = @topic.metaphors
+    @comment = current_user.comments.build if logged_in?
+    @comments = @metaphor.comments
   end
 
   def new
@@ -24,11 +26,9 @@ class TopicsController < ApplicationController
   
   def update
     if @topic.update(topic_params)
-      # 保存に成功した場合はtopicページへリダイレクト
       flash[:success] = "Update this topic !"
       redirect_to @topic
     else
-      # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
   end

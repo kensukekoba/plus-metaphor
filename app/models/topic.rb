@@ -7,5 +7,6 @@ class Topic < ActiveRecord::Base
   validates :category, presence: true
   
   has_many :metaphors
+  has_many :comments
   
 end

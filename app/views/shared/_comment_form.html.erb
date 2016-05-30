@@ -1,0 +1,13 @@
+<%= form_for(@comment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+
+    <%= f.text_area :content, class: 'form-control', placeholder: "input your comment", rows:"2" %>
+    <%= f.hidden_field :topic_id, :value => @topic.id %>
+    <%= f.hidden_field :metaphor_id, :value => metaphor.id %>
+
+  </div>
+  <%= f.submit "Comment", class: "btn btn-info" %>
+  
+<% end %>
