@@ -2,23 +2,23 @@
     <span class="title"><%= @topic.title %></span>
     <span class="content"><%= @topic.content %></span>
     <span class="link">参考リンク： <%= link_to @topic.link, @topic.link, :target=>["_blank"] %></span>
+
     <span class="category">Category: <%= @topic.category %></span>
     <span class="user">
         Created by <%= link_to @topic.user.name, @topic.user %></span>
     <span class="timestamp">
         Created <%= time_ago_in_words(@topic.created_at) %> ago.
         <% if current_user == @topic.user %>
-            <%= link_to "Delete", @topic, method: :delete, data: { confirm: "You sure?"} %>
-            <%= link_to "Edit topic" , edit_topic_path(@topic) %>            
+            <%= link_to "Delete", @topic, method: :delete, class: "btn btn-primary btn-xs", data: { confirm: "You sure?"} %>
+            <%= link_to "Edit topic" , edit_topic_path(@topic), class: "btn btn-primary btn-xs" %>            
         <% end %>
     </span>
-    <span class="category">Official flag: <%= @topic.officialflag %></span>
 </div>
 
 <% if logged_in? %>
     <%= render 'shared/metaphor_form' %>
 <% end %>
 
-<ol class="topics">
+<ol class="metaphors">
     <%= render 'metaphors/list' , metaphors: @metaphors %>
 </ol>
