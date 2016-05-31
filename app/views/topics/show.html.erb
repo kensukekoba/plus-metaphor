@@ -1,6 +1,6 @@
 <div class="topics-detail">
-    <span class="title"><%= @topic.title %></span>
-    <span class="content"><%= @topic.content %></span>
+    <span class="title h1"><%= @topic.title %></span>
+    <span class="content h3"><%= @topic.content %></span>
     <span class="link">参考リンク： <%= link_to @topic.link, @topic.link, :target=>["_blank"] %></span>
 
     <span class="category">Category: <%= @topic.category %></span>
@@ -9,8 +9,8 @@
     <span class="timestamp">
         Created <%= time_ago_in_words(@topic.created_at) %> ago.
         <% if current_user == @topic.user %>
-            <%= link_to "Delete", @topic, method: :delete, class: "btn btn-primary btn-xs", data: { confirm: "You sure?"} %>
-            <%= link_to "Edit topic" , edit_topic_path(@topic), class: "btn btn-primary btn-xs" %>            
+            <%= link_to "Delete", @topic, method: :delete, class: "btn btn-default btn-xs", data: { confirm: "You sure?"} %>
+            <%= link_to "Edit topic" , edit_topic_path(@topic), class: "btn btn-default btn-xs" %>            
         <% end %>
     </span>
 </div>

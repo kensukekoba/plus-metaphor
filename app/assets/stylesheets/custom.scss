@@ -179,13 +179,11 @@ span.picture {
     display: block;
     margin-left: 10px;
     padding: 10px;
-    font-size: 50px;
   }
   .content {
     display: block;
     margin-left: 10px;
     padding: 10px;
-    font-size: 20px;
     border-top: 1px solid #e8e8e8;
     img {
       display: block;
@@ -230,6 +228,10 @@ span.picture {
     margin-left: 10px;
   }
   .timestamp {
+    color: $gray-light;
+    margin-left: 10px;
+  }
+  .count {
     color: $gray-light;
     margin-left: 10px;
   }

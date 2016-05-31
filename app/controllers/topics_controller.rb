@@ -1,7 +1,8 @@
 class TopicsController < ApplicationController
   before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-
+ #TODO usercheck
+  
   def show
     @topic = Topic.find(params[:id])
     @metaphor = current_user.metaphors.build if logged_in?
@@ -21,6 +22,9 @@ class TopicsController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def edit
   end
   
   def update
@@ -47,6 +51,6 @@ class TopicsController < ApplicationController
   
   def set_topic
     @topic = Topic.find(params[:id])
-  end  
+  end
 
 end
