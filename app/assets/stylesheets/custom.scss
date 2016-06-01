@@ -5,6 +5,9 @@
 
 body {
   padding-top: 60px;
+  color: #333333;
+  background-color: #F5F5F5;
+  font-family: "Lucida Grande","Lucida Sans Unicode","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W6","HiraKakuPro-W6", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
 }
 
 section {
@@ -53,14 +56,18 @@ p {
 /* header */
 
 .navbar{
-    background-color: #000;
+    background-color: #fff;
+    
+ a:hover{
+  color: #5d4ef3;
+}
 }
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #333333;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -68,7 +75,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #777777;
   text-decoration: none;
 }
 
@@ -118,8 +125,9 @@ input {
   list-style: none;
   padding: 0;
   li {
+    margin-top: 10px;
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    background-color: #fff;
   }
   .user {
     margin-top: 5em;
@@ -235,4 +243,17 @@ span.picture {
     color: $gray-light;
     margin-left: 10px;
   }
+}
+
+
+footer {
+  margin-top: 30px;
+  background-color: #333333;
+  text-align: center;
+}
+      
+.copyright {
+  padding: 20px 0;
+  font-size: 12px;
+  color: #fff;
 }
