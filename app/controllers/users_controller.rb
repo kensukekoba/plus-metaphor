@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Thank you for your registration!"
+
+      # 保存後にUserMailerを使用してwelcomeメールを送信
+      UserMailer.welcome_email(@user).deliver_now
+      
       redirect_to @user
     else
       render 'new'
