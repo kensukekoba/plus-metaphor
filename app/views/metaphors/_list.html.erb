@@ -5,35 +5,33 @@
         Created <%= time_ago_in_words(metaphor.created_at) %> ago.
     </span>
     <span class="content"><%= metaphor.content %></span>
+    <span class="count">
+    <%= metaphor.comments.count %> comments / 
+    xx like. 
+    </span>
     <% if current_user == metaphor.user %>
         <%= link_to "Delete", metaphor, method: :delete, data: { confirm: "You sure?"} %>
     <% end %>
+    
+    <button type="button" class="btn btn-success btn-xs">Like!</button>
+    <button type="button" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#comment_list-<%= metaphor.id %>">Comment</button>
+
+    <div id="comment_list-<%= metaphor.id %>" class="collapse">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <% if logged_in? %>
+                    <%= render 'shared/comment_form' , metaphor: metaphor %>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <ol class="metaphors">
+                    <%= render 'comments/list' , comments: metaphor.comments %>
+                </ol>
+            </div>
+        </div>
+    </div>
 </li>
 
-<span class="count">
-    <%= metaphor.comments.count %> comments / 
-    xx like. 
-</span>
-
-<button type="button" class="btn btn-success btn-xs">Like!</button>
-<button type="button" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#comment_list-<%= metaphor.id %>">Comment</button>
-<div id="comment_list-<%= metaphor.id %>" class="collapse">
-
-<div class="row">
-<div class="col-md-10 col-md-offset-1">
-    
-        <% if logged_in? %>
-            <%= render 'shared/comment_form' , metaphor: metaphor %>
-        <% end %>
-</div>
-</div>
-<div class="row">
-<div class="col-md-10 col-md-offset-1">
-
-        <ol class="metaphors">
-            <%= render 'comments/list' , comments: metaphor.comments %>
-        </ol>
-    </div>
-</div>
-</div>
 <% end %>
