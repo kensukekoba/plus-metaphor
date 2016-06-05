@@ -1,25 +1,10 @@
-<header class="navbar navbar-fixed-top navbar-default" role="navigation">
+<header class="navbar navbar-fixed-top">
   <div class="container">
-
-    <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-4">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <%= link_to "比喩ジャックマン", root_path, class: "navbar-brand page-scroll", id: "logo" %>
-    </div>
-
-    <!-- グローバルナビの中身 -->
-    <div class="collapse navbar-collapse" id="nav-menu-4">
+    <%= link_to "比喩ジャックマン", root_path, id: "logo" %>
+    <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>        
-        
+        <li><%= link_to "About", about_path %></li>
         <% if logged_in? %>
         <li><%= link_to "New topic", new_topic_path %></li>
           <li class="dropdown">
@@ -40,7 +25,6 @@
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
-
-    </div>
+    </nav>
   </div>
 </header>
