@@ -8,10 +8,15 @@
       <p class="h4">
         <%= link_to "Edit your profile" , edit_user_path(@user) %>
       </p>
+          <%= link_to "Following" , followings_user_path(@user) %>:
+          <%= @user.following_users.count %>
+          <%= link_to "Follower" , followers_user_path(@user) %>:
+          <%= @user.follower_users.count %>
     </section>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
- 
+
+
   </div>
 </div>
