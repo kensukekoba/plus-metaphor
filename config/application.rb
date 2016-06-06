@@ -42,5 +42,7 @@ module PlusMetaphor
       :password => ENV["SMTP_USER_PASSWORD"]
     }
     
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+    
   end
 end

@@ -15,13 +15,13 @@
     <div class="form-group">
       <p>Category</p>
       <div class="radio-inline">
-        <%= f.radio_button :category, 'object' %> <%= f.label :category, '物' , :value => "object" %>
+        <%= f.radio_button :category, 'object', class: 'radio_button' %> <%= f.label :category, '物' , :value => "object" %>
       </div>
       <div class="radio-inline">
-        <%= f.radio_button :category, 'feeling' %> <%= f.label :category, '心情・気分' , :value => "feeling" %>
+        <%= f.radio_button :category, 'feeling', class: 'radio_button' %> <%= f.label :category, '心情・気分' , :value => "feeling" %>
       </div>
       <div class="radio-inline">
-        <%= f.radio_button :category, 'event' %> <%= f.label :category, '出来事・状況' , :value => "event" %>
+        <%= f.radio_button :category, 'event', class: 'radio_button' %> <%= f.label :category, '出来事・状況' , :value => "event" %>
       </div>
     </div>
     

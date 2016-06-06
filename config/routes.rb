@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :topics
   resources :metaphors
   resources :comments
+  resources :relationships, only: [:create, :destroy]
 
 end

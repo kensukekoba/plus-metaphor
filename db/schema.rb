@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529080827) do
+ActiveRecord::Schema.define(version: 20160605235255) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 20160529080827) do
   add_index "metaphors", ["topic_id"], name: "index_metaphors_on_topic_id"
   add_index "metaphors", ["user_id", "created_at"], name: "index_metaphors_on_user_id_and_created_at"
   add_index "metaphors", ["user_id"], name: "index_metaphors_on_user_id"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "topics", force: :cascade do |t|
     t.integer  "user_id"
