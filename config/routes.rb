@@ -23,5 +23,8 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :metaphors do
+    resources :likes, only: [:create, :destroy]
+  end
 
 end

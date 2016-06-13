@@ -1,0 +1,14 @@
+<% if logged_in? %>
+
+    <% if metaphor.like_user(current_user.id) %>
+        <%= button_to metaphor_like_path(user_id: current_user.id, metaphor_id: metaphor.id), method: :delete, id: "like-buttons", class: "btn btn-success btn-xs", remote: true do%>
+            Likeを取り消す
+        <% end %>
+
+    <% else %>
+        <%= button_to metaphor_likes_path(metaphor), id: "like-buttons", class: "btn btn-success btn-xs", remote: true do %>
+            Like!
+        <% end %>
+    <% end %>
+    
+<% end %>
