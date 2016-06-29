@@ -8,4 +8,11 @@ class Metaphor < ActiveRecord::Base
   
   has_many :comments
   
+  has_many :likes, dependent: :destroy
+  
+  def like_user(user)
+    likes.find_by(user_id: user)
+  end
+
+
 end

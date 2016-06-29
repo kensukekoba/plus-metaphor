@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605235255) do
+ActiveRecord::Schema.define(version: 20160612044047) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,12 +29,35 @@ ActiveRecord::Schema.define(version: 20160605235255) do
   add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "favo_user_id"
+    t.integer  "favo_metaphor_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "favorites", ["favo_metaphor_id"], name: "index_favorites_on_favo_metaphor_id"
+  add_index "favorites", ["favo_user_id", "favo_metaphor_id"], name: "index_favorites_on_favo_user_id_and_favo_metaphor_id", unique: true
+  add_index "favorites", ["favo_user_id"], name: "index_favorites_on_favo_user_id"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "metaphor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "likes", ["metaphor_id"], name: "index_likes_on_metaphor_id"
+  add_index "likes", ["user_id", "metaphor_id"], name: "index_likes_on_user_id_and_metaphor_id", unique: true
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
   create_table "metaphors", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "topic_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "likes_count", default: 0
   end
 
   add_index "metaphors", ["topic_id", "created_at"], name: "index_metaphors_on_topic_id_and_created_at"

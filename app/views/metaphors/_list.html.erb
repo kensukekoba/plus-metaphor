@@ -7,15 +7,21 @@
     <span class="content"><%= metaphor.content %></span>
     <span class="count">
     <%= metaphor.comments.count %> comments / 
-    xx like. 
+    <%= metaphor.likes_count %> like. 
     </span>
     <% if current_user == metaphor.user %>
         <%= link_to "Delete", metaphor, method: :delete, data: { confirm: "You sure?"} %>
     <% end %>
     
-    <button type="button" class="btn btn-success btn-xs">Like!</button>
+    <span>
+        
+    <% if logged_in? %>
+        <%= render 'likes/like_form', metaphor: metaphor %>
+    <% end %>
+    
     <button type="button" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#comment_list-<%= metaphor.id %>">Comment</button>
-
+    </span>
+    
     <div id="comment_list-<%= metaphor.id %>" class="collapse">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

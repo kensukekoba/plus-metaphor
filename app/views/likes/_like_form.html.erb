@@ -1,0 +1,7 @@
+<div id="like_form">
+    <% if metaphor.like_user(current_user) %>
+        <%= render 'likes/unlike' , metaphor: metaphor %>
+    <% else %>
+        <%= render 'likes/like' , metaphor: metaphor %>
+    <% end %>
+</div>
