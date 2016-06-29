@@ -14,7 +14,10 @@
     <% end %>
     
     <span>
-    <%= render 'likes/like', metaphor: metaphor %>
+        
+    <% if logged_in? %>
+        <%= render 'likes/like_form', metaphor: metaphor %>
+    <% end %>
     
     <button type="button" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#comment_list-<%= metaphor.id %>">Comment</button>
     </span>
