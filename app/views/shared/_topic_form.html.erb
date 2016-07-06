@@ -1,39 +1,45 @@
-<%= form_for(@topic) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
+<div class="col-md-10 col-md-offset-1">
+  <div class="row">
 
-    <%= f.label :Title %>
-    <%= f.text_field :title, class: 'form-control', placeholder: "input title" %>
+  <%= form_for(@topic) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
 
-    <%= f.label :Content %>
-    <%= f.text_area :content, class: 'form-control', placeholder: "input content", rows:"10" %>
+      <%= f.label :Title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "input title" %>
 
-    <%= f.label :参考リンク %>
-    <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
+      <%= f.label :Content %>
+      <%= f.text_area :content, class: 'form-control', placeholder: "input content", rows:"10" %>
 
-    <% #TODO 見た目の調整 %>
-    <div class="form-group">
-      <p>Category</p>
-      <div class="radio-inline">
-        <%= f.radio_button :category, 'object', class: 'radio_button' %> <%= f.label :category, '物' , :value => "object" %>
-      </div>
-      <div class="radio-inline">
-        <%= f.radio_button :category, 'feeling', class: 'radio_button' %> <%= f.label :category, '心情・気分' , :value => "feeling" %>
-      </div>
-      <div class="radio-inline">
-        <%= f.radio_button :category, 'event', class: 'radio_button' %> <%= f.label :category, '出来事・状況' , :value => "event" %>
-      </div>
-    </div>
-    
-    <% if current_user.adminflag == true %>
+      <%= f.label :参考リンク %>
+      <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
+
+      <% #TODO 見た目の調整 %>
       <div class="form-group">
-        <p>Official</p>
-        <div class="checkbox-inline">
-          <%= f.check_box :officialflag, {}, true, false %> <%= f.label :officialflag, 'official topic'  %>
+        <p><b>Category</b></p>
+        <div class="radio-inline">
+          <%= f.radio_button :category, 'object', class: 'radio_button' %> <%= f.label :category, '物' , :value => "object" %>
+        </div>
+        <div class="radio-inline">
+          <%= f.radio_button :category, 'feeling', class: 'radio_button' %> <%= f.label :category, '心情・気分' , :value => "feeling" %>
+        </div>
+        <div class="radio-inline">
+          <%= f.radio_button :category, 'event', class: 'radio_button' %> <%= f.label :category, '出来事・状況' , :value => "event" %>
         </div>
       </div>
-    <% end %>
     
+      <% if current_user.adminflag == true %>
+        <div class="form-group">
+          <p><b>Official Flag</b></p>
+          <div class="checkbox-inline">
+            <%= f.check_box :officialflag, {}, true, false %> <%= f.label :officialflag, 'official topic'  %>
+          </div>
+        </div>
+      <% end %>
+    
+    </div>
+    <%= f.submit "Post new topic", class: "btn btn-primary" %>
+  <% end %>
+
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+</div>
