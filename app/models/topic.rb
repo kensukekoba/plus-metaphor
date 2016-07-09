@@ -9,4 +9,6 @@ class Topic < ActiveRecord::Base
   has_many :metaphors
   has_many :comments
   
+  mount_uploader :image, ImageUploader 
+  
 end

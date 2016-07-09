@@ -10,6 +10,8 @@
 
       <%= f.label :Content %>
       <%= f.text_area :content, class: 'form-control', placeholder: "input content", rows:"10" %>
+      
+      <%= f.file_field :image %>
 
       <%= f.label :参考リンク %>
       <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
