@@ -9,7 +9,7 @@
                 <% @users.each do |user| %>
                     <li>
                         <div class="row no-margin">
-                            <%= link_to gravatar_for(user, size: 50), user %>
+                            <%= image_tag user.image_url(:thumb) %>
                             <span class="user"><%= link_to user.name, user %></span><br />
                             <span class="content"><%= user.favo_phrase %></span>
                         </div>

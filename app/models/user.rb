@@ -38,5 +38,7 @@ class User < ActiveRecord::Base
     end
 
     has_many :likes, dependent: :destroy
+    
+    mount_uploader :image, ImageUploader
 
 end
