@@ -140,6 +140,33 @@ input {
 
 
 
+/* users info */
+
+.user_info{
+  img{
+    border-radius :10%;
+    border: 2px solid #ffffff;
+  }
+  .user{
+    margin-top: 5px;
+    font-size: 24px;
+  }
+  .favo_phrase{
+    font-size: 18px;
+  }
+  input{
+    width: 100px;
+  }
+}
+
+/* user edit */
+
+.user_edit{
+  img{
+    border-radius :10%;
+    border: 2px solid #ffffff;
+  }
+}
 
 
 /* topics */
@@ -251,29 +278,36 @@ span.picture {
 
 .metaphors {
   list-style: none;
-  padding: 0;
+  padding-left: 10px;
   background-color: #fff;
+  height: 100%;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
   .user {
     margin-top: 5em;
-    margin-left: 10px;
     color: $gray-light;
     padding-top: 0;
   }
   .content {
     display: block;
-    margin-left: 10px;
-  }
+    font-size: 18px;
+    }
   .timestamp {
     color: $gray-light;
     margin-left: 10px;
   }
   .count {
     color: $gray-light;
-    margin-left: 10px;
+  }
+  img{
+    width: 100%;
+    border-radius: 10%;
+    border: 2px solid #ffffff;
+  }
+  .no-padding{
+    padding: 0;
   }
 }
 

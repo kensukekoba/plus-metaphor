@@ -1,5 +1,6 @@
+<div class="user_edit">
 <h1>
-    <%= image_tag @user.image_url(:thumb) %>
+    <%= image_tag @user.image_url, :size => '200x200' %>
     <%= @user.name %>
 </h1>
 
@@ -33,4 +34,5 @@
 
 <div class="col-md-6 col-md-offset-3">
 <%= link_to "アカウント削除はこちら" , @user , method: :delete, data: { confirm: '削除してもよろしいですか？'} %>
+</div>
 </div>

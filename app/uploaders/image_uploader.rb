@@ -50,7 +50,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # サムネイルを生成する設定
   version :thumb do
-     process :resize_to_fit => [150, 150]
+     process :resize_to_fit => [80, 80]
   end
   
   # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
