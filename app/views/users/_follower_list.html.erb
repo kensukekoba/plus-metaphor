@@ -4,7 +4,11 @@
             <li>
                 <div class="row no-margin">
                     <div class="col-xs-2 col-sm-1 no-padding">
+                    <% if user.image? %>
                         <%= image_tag user.image_url(:thumb) %>
+                    <% else %>
+                        <%= image_tag("/uploads/user/image/default/default.jpg") %>
+                    <% end %>
                     </div>
                     <div class="col-xs-10 col-sm-11">            
                         <span class="user"><%= link_to user.name, user %></span><br />

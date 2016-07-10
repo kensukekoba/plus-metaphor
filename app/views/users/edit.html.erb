@@ -1,7 +1,11 @@
 <div class="user_edit">
 <h1>
-    <%= image_tag @user.image_url, :size => '200x200' %>
-     <div class="user"><%= @user.name %></div>
+    <% if @user.image? %>
+        <%= image_tag @user.image_url, :size => '200x200' %>
+    <% else %>
+        <%= image_tag("/uploads/user/image/default/default.jpg") %>
+    <% end %>
+    <div class="user"><%= @user.name %></div>
 </h1>
 
 <div class="row">

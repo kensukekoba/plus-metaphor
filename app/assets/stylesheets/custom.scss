@@ -317,6 +317,10 @@ span.picture {
   .no-padding{
     padding: 0;
   }
+  .no-margin{
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 
@@ -340,6 +344,43 @@ span.picture {
   }
 }
 
+/* comments */
+
+.comments {
+  list-style: none;
+  padding-left: 20px;
+  background-color: #fff;
+  height: 100%;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    color: $gray-light;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    font-size: 18px;
+    }
+  .timestamp {
+    color: $gray-light;
+    margin-left: 10px;
+  }
+  img{
+    width: 100%;
+    border-radius: 10%;
+    border: 2px solid #ffffff;
+  }
+  .no-padding{
+    padding: 0;
+  }
+  .no-margin{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 
 

@@ -1,7 +1,7 @@
 <% metaphors.each do |metaphor| %>
 <li>
     <div class="col-sm-1 col-xs-2 no-padding">
-    <%= image_tag metaphor.user.image_url(:thumb) %>
+            <%= image_tag metaphor.user.image_url(:thumb) %>
     </div>
     <div class="col-sm-11 col-xs-10">
         <span class="user"><%= link_to metaphor.user.name, metaphor.user %></span>
@@ -24,5 +24,4 @@
         <% end %>
     </span>
 </li>
-
 <% end %>

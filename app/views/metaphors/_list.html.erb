@@ -1,7 +1,13 @@
 <% metaphors.each do |metaphor| %>
+<div class="row no-margin">
 <li>
     <div class="col-sm-1 col-xs-2 no-padding">
-    <%= image_tag metaphor.user.image_url(:thumb) %>
+    <% if metaphor.user.image? %>
+        <%= image_tag metaphor.user.image_url(:thumb) %>
+    <% else %>
+        <%= image_tag("/uploads/user/image/default/default.jpg") %>
+    <% end %>
+        
     </div>
     <div class="col-sm-11 col-xs-10">
         <span class="user"><%= link_to metaphor.user.name, metaphor.user %></span>
@@ -17,31 +23,23 @@
         <% if current_user == metaphor.user %>
             <%= link_to "Delete", metaphor, method: :delete, data: { confirm: "You sure?"} %>
         <% end %>
-    </div>   
-    <span>
+        
         <% if logged_in? %>
             <%= render 'likes/like_form', metaphor: metaphor %>
         <% end %>
-        <button type="button" class="btn btn-success btn-xs" data-toggle="collapse" data-target="#comment_list-<%= metaphor.id %>">Comment</button>
-    </span>
-   
-    <div id="comment_list-<%= metaphor.id %>" class="collapse">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <% if logged_in? %>
-                    <%= render 'shared/comment_form' , metaphor: metaphor %>
-                <% end %>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <ol class="metaphors">
-                    <%= render 'comments/list' , comments: metaphor.comments %>
-                </ol>
-            </div>
-        </div>
-    </div>
 
+        <button type="button" class="btn btn-success btn-xs">Comment</button>   
+    </div>   
+    
+
+    
 </li>
+</div>
+<div>
+    <ol class="comments">
+        <%= render 'comments/list' , comments: metaphor.comments %>
+    </ol>
+</div>
+
 
 <% end %>

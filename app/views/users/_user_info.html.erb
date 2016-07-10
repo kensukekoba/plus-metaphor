@@ -1,5 +1,9 @@
 <section class="user_info">
-    <%= image_tag @user.image_url, :size => '200x200' %>
+    <% if @user.image? %>
+        <%= image_tag @user.image_url, :size => '200x200' %>
+    <% else %>
+        <%= image_tag("/uploads/user/image/default/default.jpg") %>
+    <% end %>
     <div class="user"><%= @user.name %></div>
     <div class="favo_phrase"><%= @user.favo_phrase %></div>
       
