@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @metaphor = current_user.metaphors.build if logged_in?
-    @metaphors = @topic.metaphors.includes(:comments)
+    @metaphors = @topic.metaphors.includes(:comments).order(created_at: :desc)
     @comment = current_user.comments.build if logged_in?
   end
 

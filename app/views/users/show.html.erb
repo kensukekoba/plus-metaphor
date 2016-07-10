@@ -2,10 +2,33 @@
   <aside class="col-md-4">
     <%= render 'user_info' %>
   </aside>
+  
   <div class="col-md-8">
-    <%= link_to "Following" , followings_user_path(@user) %>:
-    <%= @user.following_users.count %>
-    <%= link_to "Follower" , followers_user_path(@user) %>:
-    <%= @user.follower_users.count %>
+    <div class="tab">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active" role="presentation">
+          <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">Metaphor(<%= @user.metaphors.count %>)</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">Following(<%= @user.following_users.count %>)</a>
+        </li>
+        <li role="presentation">
+          <a aria-controls="tab_c" data-toggle="tab" href="#tab_c" role="tab">Follower(<%= @user.follower_users.count %>)</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab_a" role="tabpanel">
+          <ol class="metaphors user_metaphors">
+            <%= render 'metaphors/users_metaphor_list' , metaphors: @user.metaphors %>
+          </ol>
+        </div>
+        <div class="tab-pane" id="tab_b" role="tabpanel">
+          <%= render 'following_list' , users: @user.following_users %>
+        </div>
+        <div class="tab-pane" id="tab_c" role="tabpanel">
+          <%= render 'follower_list' , users: @user.follower_users %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

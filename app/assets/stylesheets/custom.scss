@@ -139,6 +139,11 @@ input {
 }
 
 
+/* tabs */
+
+.tab{
+  font-size: 18px;
+}
 
 /* users info */
 
@@ -165,6 +170,9 @@ input {
   img{
     border-radius :10%;
     border: 2px solid #ffffff;
+  }
+  .user{
+    margin-top :5px;
   }
 }
 
@@ -311,6 +319,14 @@ span.picture {
   }
 }
 
+
+/* user metaphors */
+
+.user_metaphors{
+    margin-top: 10px;
+}
+
+
 /* metaphor_form */
 
 .metaphor_form {
@@ -349,7 +365,9 @@ span.picture {
 
 .follow_list {
   list-style: none;
+  margin-top: 10px;
   padding: 0;
+  background-color: #fff;
   
   li {
     padding: 10px 0;
@@ -374,13 +392,19 @@ span.picture {
   }
   
   img {
-      display: block;
-
+      width: 100%;
+      border-radius: 10%;
+      border: 2px solid #ffffff;
+      margin-left: 10px;
   }
   
   .no-margin{
     margin: 0;
   }
+  .no-padding{
+    padding: 0;
+  }
+  
   
 }
 

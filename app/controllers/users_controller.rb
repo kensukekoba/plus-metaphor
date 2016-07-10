@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @metaphors = @user.metaphors.order(created_at: :desc)
   end
 
   def new
