@@ -6,6 +6,16 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @metaphors = @user.metaphors.order(created_at: :desc)
+    @total_like = 0
+    @user.metaphors.each do |metaphor|
+        like_score = metaphor.likes_count
+        @total_like += like_score
+    end
+    if @total_like >= 10
+      @user_level = "Blackbelt"
+    else
+      @user_level = "Whitebelt"
+    end
   end
 
   def new

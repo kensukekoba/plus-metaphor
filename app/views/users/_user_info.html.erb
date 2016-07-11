@@ -6,7 +6,8 @@
     <% end %>
     <div class="user"><%= @user.name %></div>
     <div class="favo_phrase"><%= @user.favo_phrase %></div>
-      
+    <%= @user_level %>
+    
     <% if current_user != @user %>
         <%= render 'follow_form' if logged_in? %>
     <% else %>
