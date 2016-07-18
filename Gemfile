@@ -5,7 +5,6 @@ ruby "2.3.0"
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
-gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,14 +31,19 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'rmagick'
 
-gem "rails_12factor", group: :prodution
-
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
