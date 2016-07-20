@@ -39,7 +39,7 @@ module PlusMetaphor
       :domain => 'smtp.gmail.com',
       :authentication => 'plain',
       :user_name => ENV["SMTP_USER_NAME"] ,
-      :password => ENV["SMTP_USER_PASSWORD"]
+      :password => ENV["SMTP_APP_PASSWORD"]
     }
     
     config.action_view.embed_authenticity_token_in_remote_forms = true
