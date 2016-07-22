@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hndjgrcek
+  api_key: '255498661949231'
+  api_secret: wMA1g8GYjPXdK_GZ0fISHk6dE_o
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hndjgrcek
+  api_key: '255498661949231'
+  api_secret: wMA1g8GYjPXdK_GZ0fISHk6dE_o
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hndjgrcek
+  api_key: '255498661949231'
+  api_secret: wMA1g8GYjPXdK_GZ0fISHk6dE_o
+  enhance_image_tag: true
+  static_image_support: false

@@ -254,11 +254,13 @@ span.picture {
     margin-left: 10px;
     padding: 10px;
     border-top: 1px solid #e8e8e8;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
   }
+  .topic_img {
+      display: block;
+      margin-left: 10px;
+      padding: 0px 0px 0px 10px;
+  }
+  
   .link {
     display: block;
     margin-top: 10px;
