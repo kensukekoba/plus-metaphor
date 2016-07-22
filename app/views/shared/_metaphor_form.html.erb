@@ -2,9 +2,9 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
-    <%= f.text_area :content, class: 'form-control', placeholder: "input your metaphor", rows:"3" %>
+    <%= f.text_area :content, class: 'form-control', placeholder: "あなたの比喩をつぶやこう", rows:"3" %>
     <%= f.hidden_field :topic_id, :value => @topic.id %>
   </div>
-  <%= f.submit "Submit Metaphor", class: "btn btn-primary" %>
+  <%= f.submit "投稿する", class: "btn btn-primary" %>
   
 <% end %>

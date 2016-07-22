@@ -5,9 +5,9 @@
         <%= image_tag("/uploads/user/image/default/default.jpg") %>
     <% end %>
     <div class="user"><%= @user.name %></div>
-    <div class="favo_phrase"><%= @user.favo_phrase %></div>
-    <%= @user_level %>
-    
+    LEVEL<br /><div class="user_level"><%= @user_level %></div>
+    好きなメタファ<br /><div class="favo_phrase"><%= @user.favo_phrase %></div>
+ 
     <% if current_user != @user %>
         <%= render 'follow_form' if logged_in? %>
     <% else %>

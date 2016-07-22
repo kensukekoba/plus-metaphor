@@ -5,19 +5,19 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
 
-      <%= f.label :Title %>
+      <%= f.label :title, "タイトル" %>
       <%= f.text_field :title, class: 'form-control', placeholder: "input title" %>
 
-      <%= f.label :Content %>
+      <%= f.label :content, "コンテンツ" %>
       <%= f.text_area :content, class: 'form-control', placeholder: "input content", rows:"10" %>
       
       <%= f.file_field :image %>
 
-      <%= f.label :参考リンク %>
+      <%= f.label :link, "参考リンク" %>
       <%= f.text_field :link, class: 'form-control', placeholder: "link" %>
 
       <div class="form-group">
-        <p><b>Category</b></p>
+        <p><b>カテゴリー</b></p>
         <div class="radio-inline">
           <%= f.radio_button :category, 'object', class: 'radio_button' %> <%= f.label :category, '物' , :value => "object" %>
         </div>
@@ -33,13 +33,13 @@
         <div class="form-group">
           <p><b>Official Flag</b></p>
           <div class="checkbox-inline">
-            <%= f.check_box :officialflag, {}, true, false %> <%= f.label :officialflag, 'official topic'  %>
+            <%= f.check_box :officialflag, {}, true, false %> <%= f.label :officialflag, '公式コンテンツ'  %>
           </div>
         </div>
       <% end %>
     
     </div>
-    <%= f.submit "Post new topic", class: "btn btn-primary" %>
+    <%= f.submit "投稿する", class: "btn btn-primary" %>
   <% end %>
 
   </div>

@@ -12,9 +12,9 @@ class UsersController < ApplicationController
         @total_like += like_score
     end
     if @total_like >= 10
-      @user_level = "Blackbelt"
+      @user_level = "上田晋也級"
     else
-      @user_level = "Whitebelt"
+      @user_level = "素人"
     end
   end
 
