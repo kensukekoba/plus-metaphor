@@ -13,6 +13,7 @@
         <%= form_for(@user) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
             
+            <%= f.label :image, "プロフィール画像" %>
             <%= f.file_field :image %>
             
             <%= f.label :name %>
@@ -21,16 +22,16 @@
             <%= f.label :email %>
             <%= f.email_field :email, class: 'form-control' %>
             
-            <%= f.label :favo_phrase %>
+            <%= f.label :favo_phrase, "好きなメタファ" %>
             <%= f.text_field :favo_phrase, class: 'form-control' %>
             
-            <%= f.label :password %>
+            <%= f.label :password, "パスワード" %>
             <%= f.password_field :password, class: 'form-control' %>
             
-            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.label :password_confirmation, "パスワードの確認" %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
             
-            <%= f.submit class: "btn btn-large btn-primary" %>
+            <%= f.submit "ユーザ情報を更新する", class: "btn btn-large btn-primary" %>
         <% end %>
         
     </div>
